@@ -24,16 +24,16 @@
             <button class="tab-button" onclick="displaySignup()">New Users</button>
         </div>
         <div id="Log In" class="tab-login">
-            <div class="wrapper">
-                <h1>Welcome back.</h1>
-                <div class="input">
-                    <input id="loginEmail" type="email" placeholder="Email" required>
+                <div class="wrapper">
+                    <h1>Welcome back.</h1>
+                    <div class="input">
+                        <input id="loginEmail" type="email" placeholder="Email" required>
+                    </div>
+                    <div class="input">
+                        <input id="loginPassword" type="password" placeholder="Password" required>
+                    </div>
+                    <button type="submit" class="submit-button" onclick="validateLogin()">Log In</button>
                 </div>
-                <div class="input">
-                    <input id="loginPassword" type="password" placeholder="Password" required>
-                </div>
-                <button type="submit" class="submit-button" onclick="validateLogin()">Log In</button>
-            </div>
         </div>
         <div id="Sign Up" class="tab-signup">
             <form onsubmit="return passwordMatch(event, this);">
@@ -56,13 +56,17 @@
         </div>
         <script>
             function validateLogin() {
-                
                 var email = document.getElementById("loginEmail").value;
                 var password = document.getElementById("loginPassword").value;
 
-                if(email == "user@admin.com" && password == "admin") {
-                    console.log("Login Success!")
-                } else console.log("Login Fail!")
+
+                // Replace the current admin access with a search against the database
+                if(email === "user@admin.com" && password === "admin") {
+                    console.log("Login Success!");
+                    window.location.href = "home.html";  // Redirects to home.html
+                } else {
+                    console.log("Wrong credentials: \nemail: user@admin.com,\n password: admin");
+                }
             }
         </script>
     </body>

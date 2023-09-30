@@ -11,10 +11,11 @@ body{
     gap: 10px;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
     background-image: url(../images/bg.png);
     background-size: cover;
     background-position: center;
+    max-height: calc(100vh - 50px);
+    overflow-y: auto;
 }
 
 .diagonal{

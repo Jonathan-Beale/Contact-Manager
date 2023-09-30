@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SLP-17 Home</title>
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet">
+    <style>
+        .contact {
+            background: #ffffff89;
+            backdrop-filter: blur(30px);
+            border: solid 5px #000000;
+            color: #000000;
+            border-radius: 10px;
+            padding: 10px;
+            margin: 10px;
+            text-align: center;
+        }
+
+        .contact-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .contact-name {
+            font-size: 20px;
+            color: #000000;
+            font-weight: 600;
+            transition: 0.3s;
+            cursor: pointer;
+            background: #00ffc3ce;
+            border: none;
+            border-radius: 5px;
+            padding: 5px 10px;
+        }
+
+        .contact-details {
+            display: none;
+            padding-top: 10px;
+        }
+
+        .contact.show .contact-details {
+            display: block;
+        }
+
+        .contact-name.show {
+            background: #007f5b;
+        }
+
+        .contacts-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            font-size: 14px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="diagonal">
+        <div id="Title" class="title">
+            <h1>SLP-17 Home</h1>
+        </div>
+    </div>
+
+    <!-- Add a clear purpose or title for this section -->
+    <h1><br></h1>
+
+    <div class="wrapper">
+        <div id="contactsContainer" class="contacts-wrapper">
+            <div class="contacts-grid">
+                <!-- Use a table for tabular data -->
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Contact Name</th>
+                            <th>Contact Phone #</th>
+                            <th>Contact Email Address</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Add contact entries as table rows -->
+                        <tr class="contact">
+                            <td>Burt Reynolds</td>
+                            <td>(111) 111-111</td>
+                            <td><a href="mailto:burt@bandit.com">burt@bandit.com</a></td>
+                        </tr>
+                        <tr class="contact">
+                            <td>Burt Reynolds</td>
+                            <td>(111) 111-111</td>
+                            <td><a href="mailto:burt@bandit.com">burt@bandit.com</a></td>
+                        </tr>
+                        <tr class="contact">
+                            <td>Burt Reynolds</td>
+                            <td>(111) 111-111</td>
+                            <td><a href="mailto:burt@bandit.com">burt@bandit.com</a></td>
+                        </tr>
+                        <!-- Add more contact entries following the same structure -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript to handle collapsing/expanding contacts
+        const contactNames = document.querySelectorAll('.contact-name');
+
+        contactNames.forEach(contactName => {
+            contactName.addEventListener('click', () => {
+                const contact = contactName.closest('.contact');
+                contact.classList.toggle('show');
+                contactName.classList.toggle('show');
+            });
+        });
+    </script>
+</body>
+</html>
