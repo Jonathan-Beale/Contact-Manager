@@ -18,3 +18,36 @@
     ]
   }
   
+
+  function copyContent(element) {
+    var range = document.createRange();
+    range.selectNode(element);
+    window.getSelection().removeAllRanges()
+    window.getSelection().addRange(range)
+
+    document.execCommand("copy");
+    window.getSelection().removeAllRanges();
+    
+    // Change the background color
+    element.classList.add("clicked");
+
+
+    // Set a timeout to revert the background color after 1000 milliseconds (1 second)
+    setTimeout(function() {
+        element.classList.remove("clicked"); // Remove the "clicked" class
+    }, 100);
+
+    showBanner();
+
+    // For debugging, alert tells you what was copied
+    // alert("Text copied: " + element.textContent);
+}
+function showBanner() {
+    var banner = document.getElementById("feedbackBanner");
+    banner.textContent = "Click to Copy";
+}
+
+function hideBanner() {
+    var banner = document.getElementById("feedbackBanner");
+    banner.textContent = "";
+}
