@@ -1,0 +1,224 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Comfortaa", sans-serif;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    background-image: url(../images/bg2.png);
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+}
+
+.diagonal{
+    width: 360px;
+    padding: 15px 30px;
+    background: #000000;
+    transform: skewY(7deg);
+    border-radius: 20px;
+}
+
+.title{
+    font-size: 15px;
+    padding: 30px 45px;
+    background: #ffffff;
+    font-weight: 600;
+    color: #000000;
+    transform: skewY(-7deg);
+    border:solid 5px #000000;
+    border-radius: 70px;
+}
+
+.contacts-wrapper {
+    width: 64%;
+    background: #ffffff89;
+    backdrop-filter: blur(50px);
+    border: solid 5px #000000;
+    color: #000000;
+    border-radius: 30px;
+    padding: 40px 40px;
+    height: 600px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.contact {
+    border: solid 5px #000000;
+    color: #000000;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+    transition: background-color 0.3s;
+}
+
+.contact:hover {
+    background-color: rgba(168, 255, 236, 0.838);
+    cursor: pointer;
+}
+
+.contact-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.contact-name {
+    font-size: 20px;
+    color: #000000;
+    font-weight: 600;
+    transition: 0.3s;
+    cursor: pointer;
+    background: #00ffc3ce;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+
+.contact-details {
+    display: none;
+    padding-top: 10px;
+}
+
+.contact.show .contact-details {
+    display: block;
+}
+
+.contact-name.show {
+    background: #007f5b;
+}
+
+.contacts-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+th{
+    font-size: 1.2vw;
+    padding: 1vw;
+}
+
+td{
+    font-size: 1.2vw;
+    padding: 1.5vw;
+    border: solid 1px #0000006d;
+    background-image: linear-gradient(#ffffffb0, #ffffff43);
+}
+
+.bottom-banner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333; /* Change to your desired banner background color */
+    color: white;
+    text-align: center;
+    height: 40px;
+    padding: 10px;
+}
+
+.action-button {
+    border: none;
+    background: none;
+    height: 2vw;
+    width: 2vw;
+    cursor: pointer;
+}
+
+.action-button img {
+    border: none;
+    background: none;
+    height: 2vw;
+    width: 2vw;
+    cursor: pointer;
+}
+
+.action-button:active {
+    box-shadow: 0px -6px 12px 0px rgba(0, 255, 174, 0.47);
+    cursor: pointer;
+}
+
+.add-contact{
+    margin-left: 100px;
+    margin-right: 100px;
+    padding-top: 5%;
+}
+
+::-webkit-scrollbar {
+    width: 1vw;
+    max-width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    border-radius: 20px;
+    background: none;
+}
+
+::-webkit-scrollbar-thumb {
+    background-image: linear-gradient(#00ffdb, #d0fcf2); 
+    border-radius: 20px;
+  }
+
+::-webkit-scrollbar-thumb:hover {
+    background-image: linear-gradient(#009682, #6d827f); 
+}
+
+@media screen and (max-width: 900px){
+    body{
+        gap: 1px;
+    }
+
+    .diagonal{
+        width: 200px;
+        padding: 10px 20px;
+        border-radius: 10px;
+    }
+    
+    .title{
+        font-size: 8px;
+        padding: 10px 20px;
+        border:solid 3px #000000;
+        border-radius: 30px;
+    }
+
+    .contacts-wrapper{
+        min-width: 80%;
+        border: solid 2px #000000;
+        border-radius: 25px;
+        padding: 20px 20px;
+    }
+}
+
+@media screen and (max-width: 500px){
+    body{
+        gap: .25px;
+    }
+
+    .diagonal{
+        width: 120px;
+        padding: 5px 10px;
+        border-radius: 7px;
+    }
+    
+    .title{
+        font-size: 5px;
+        padding: 5px 10px;
+        border:solid 1.5px #000000;
+        border-radius: 15px;
+    }
+
+    .contacts-wrapper{
+        min-width: 80%;
+        border: solid 2px #000000;
+        border-radius: 15px;
+        padding: 10px 10px;
+    }
+}
