@@ -7,118 +7,52 @@
     <link rel="icon" type="image/png" href="images/favicon.png">
     <link rel="stylesheet" href="css/styles.css">
     <link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet">
-    <style>
-        .contact {
-            background: #ffffff89;
-            backdrop-filter: blur(30px);
-            border: solid 5px #000000;
-            color: #000000;
-            border-radius: 10px;
-            padding: 10px;
-            margin: 10px;
-            text-align: center;
-            transition: background-color 0.3s;
-        }
-        .clicked {
-            background: #007f5b;
-        }
-        .contact:hover {
-         background-color: rgba(168, 255, 236, 0.838);
-         cursor: pointer;
-        }
-
-        .contact-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .contact-name {
-            font-size: 20px;
-            color: #000000;
-            font-weight: 600;
-            transition: 0.3s;
-            cursor: pointer;
-            background: #00ffc3ce;
-            border: none;
-            border-radius: 5px;
-            padding: 5px 10px;
-        }
-
-        .contact-details {
-            display: none;
-            padding-top: 10px;
-            
-        }
-
-        .contact.show .contact-details {
-            display: block;
-        }
-
-        .contact-name.show {
-            background: #007f5b;
-        }
-
-        .contacts-grid {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: flex-start;
-            font-size: 14px;
-        }
-
-        .bottom-banner {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            background-color: #333; /* Change to your desired banner background color */
-            color: white;
-            text-align: center;
-            height: 40px;
-            padding: 10px;
-        }
-    </style>
 </head>
 <body>
-    <div class="diagonal">
-        <div id="Title" class="title">
+    <div class="home-diagonal">
+        <div id="Title" class="home-title">
             <h1>SLP-17 Home</h1>
         </div>
     </div>
 
-    <div class="wrapper">
-        <div id="contactsContainer" class="contacts-wrapper">
-            <div class="contacts-grid">
-                <!-- Use a table for tabular data -->
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Contact Name</th>
-                            <th>Contact Phone #</th>
-                            <th>Contact Email Address</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <!-- Add contact entries as table rows -->
-                        <tr class="contact">
-                            <td onclick="copyContent(this)" onmouseleave="hideBanner()">Burt Reynolds</td>
-                            <td onclick="copyContent(this)" onmouseenter="showBanner()" onmouseleave="hideBanner()">(111) 111-111</td>
-                            <td onclick="copyContent(this)" onmouseenter="showBanner()" onmouseleave="hideBanner()"><a type="email">burt@bandit.com</a></td>
-                        </tr>
-                        <tr class="contact">
-                            <td onclick="copyContent(this)" onmouseenter="showBanner()" onmouseleave="hideBanner()">Burt Reynolds</td>
-                            <td onclick="copyContent(this)" onmouseenter="showBanner()" onmouseleave="hideBanner()">(111) 111-111</td>
-                            <td onclick="copyContent(this)" onmouseenter="showBanner()" onmouseleave="hideBanner()"><a type="email">burt@bandit.com</a></td>
-                        </tr>
-                        <tr class="contact">
-                            <td onclick="copyContent(this)" onmouseenter="showBanner()" onmouseleave="hideBanner()">Burt Reynolds</td>
-                            <td onclick="copyContent(this)" onmouseenter="showBanner()" onmouseleave="hideBanner()">(111) 111-111</td>
-                            <td onclick="copyContent(this)" onmouseenter="showBanner()" onmouseleave="hideBanner()"><a type="email">burt@bandit.com</a></td>
-                        </tr>
-                        <!-- Add more contact entries following the same structure -->
-                    </tbody>
-                </table>
-            </div>
+    <!-- Line break -->
+    <h1><br></h1>
+
+    <div id="contactsContainer" class="contacts-wrapper">
+        <div class="contacts-grid">
+            <!-- Use a table for tabular data -->
+            <table>
+                <thead>
+                    <tr>
+                        <th>Contact<br>Name</th>
+                        <th>Contact<br>Phone</th>
+                        <th>Contact<br>Email Address</th>
+                        <th>Date Created</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Add contact entries as table rows -->
+                    <tr class="contact">
+                        <td onclick="copyContent(this)" onmouseenter="showBanner()" onmouseleave="hideBanner()">Burt Reynolds</td>
+                        <td onclick="copyContent(this)" onmouseenter="showBanner()" onmouseleave="hideBanner()">(111) 111-111</td>
+                        <td onclick="copyContent(this)" onmouseenter="showBanner()" onmouseleave="hideBanner()"><a type="email">burt@bandit.com</a></td>
+                        <td onclick="copyContent(this)" onmouseenter="showBanner()" onmouseleave="hideBanner()">11/11/1111</td>
+                    </tr>
+                    <tr class="contact">
+                        <td onclick="copyContent(this)" onmouseenter="showBanner()" onmouseleave="hideBanner()">Burt Reynolds</td>
+                        <td onclick="copyContent(this)" onmouseenter="showBanner()" onmouseleave="hideBanner()">(111) 111-111</td>
+                        <td onclick="copyContent(this)" onmouseenter="showBanner()" onmouseleave="hideBanner()"><a type="email">burt@bandit.com</a></td>
+                        <td onclick="copyContent(this)" onmouseenter="showBanner()" onmouseleave="hideBanner()">11/11/1111</td>
+                    </tr>
+                    <tr class="contact">
+                        <td onclick="copyContent(this)" onmouseenter="showBanner()" onmouseleave="hideBanner()">Burt Reynolds</td>
+                        <td onclick="copyContent(this)" onmouseenter="showBanner()" onmouseleave="hideBanner()">(111) 111-111</td>
+                        <td onclick="copyContent(this)" onmouseenter="showBanner()" onmouseleave="hideBanner()"><a type="email">burt@bandit.com</a></td>
+                        <td onclick="copyContent(this)" onmouseenter="showBanner()" onmouseleave="hideBanner()">11/11/1111</td>
+                    </tr>
+                    <!-- Add more contact entries following the same structure -->
+                </tbody>
+            </table>
         </div>
     </div>
     <div class="bottom-banner" id="feedbackBanner">Click to Copy</div>
@@ -134,7 +68,6 @@
                 contactName.classList.toggle('show');
             });
         });
-        
 
         function copyContent(element) {
             var range = document.createRange();
@@ -146,7 +79,6 @@
             window.getSelection().removeAllRanges();
             
             // Change the background color
-            element.classList.add("clicked");
 
             var banner = document.getElementById("feedbackBanner");
             banner.textContent = "Copied!";
@@ -154,7 +86,6 @@
 
             // Set a timeout to revert the background color after 1000 milliseconds (1 second)
             setTimeout(function() {
-                element.classList.remove("clicked");
                 banner.style.backgroundColor = "#333";
             }, 200);
 
