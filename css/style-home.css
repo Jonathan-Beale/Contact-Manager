@@ -70,29 +70,9 @@ body{
     align-items: center;
 }
 
-.contact-name {
-    font-size: 20px;
-    color: #000000;
-    font-weight: 600;
-    transition: 0.3s;
-    cursor: pointer;
-    background: #00ffc3ce;
-    border: none;
-    border-radius: 5px;
-    padding: 5px 10px;
-}
-
-.contact-details {
-    display: none;
-    padding-top: 10px;
-}
-
-.contact.show .contact-details {
-    display: block;
-}
-
-.contact-name.show {
-    background: #007f5b;
+.editable-detail {
+    background: white;
+    cursor: auto;
 }
 
 .contacts-grid {

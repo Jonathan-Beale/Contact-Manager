@@ -15,7 +15,7 @@
         </div>
     </div>
 
-    <!-- Line break -->
+    <!-- Line break for spacing -->
     <h1><br></h1>
 
     <div id="contactsContainer" class="contacts-wrapper">
@@ -30,30 +30,30 @@
                         <th>Date Created</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody id="contactTable">
                     <!-- Add contact entries as table rows -->
                     <tr class="contact">
-                        <td onclick="copyContent(this)" onmouseleave="hideBanner()">Burt Reynolds</td>
-                        <td onclick="copyContent(this)" onmouseenter="showBanner()" onmouseleave="hideBanner()">(111) 111-111</td>
-                        <td onclick="copyContent(this)" onmouseenter="showBanner()" onmouseleave="hideBanner()"><a type="email">burt@bandit.com</a></td>
-                        <td onclick="copyContent(this)" onmouseenter="showBanner()" onmouseleave="hideBanner()">11/11/1111</td>
-                        <td><button class="action-button" onclick="editContact()" id="edit-button"><img src="images/edit-icon.png"/></button>
+                        <td class="contact-detail">Burt Reynolds</td>
+                        <td class="contact-detail">(111) 111-111</td>
+                        <td class="contact-detail"><a type="email">burt@bandit.com</a></td>
+                        <td class="contact-detail">11/11/1111</td>
+                        <td><button class="action-button" onclick="editContact(this.parentNode.parentNode)" id="edit-button"><img src="images/edit-icon.png"/></button>
                         <button class="action-button" onclick="deleteContact(this)" id="delete-button"><img src="images/delete-icon.png"/></button></td>
                     </tr>
                     <tr class="contact">
-                        <td onclick="copyContent(this)" onmouseenter="showBanner()" onmouseleave="hideBanner()">Burt Reynolds</td>
-                        <td onclick="copyContent(this)" onmouseenter="showBanner()" onmouseleave="hideBanner()">(111) 111-111</td>
-                        <td onclick="copyContent(this)" onmouseenter="showBanner()" onmouseleave="hideBanner()"><a type="email">burt@bandit.com</a></td>
-                        <td onclick="copyContent(this)" onmouseenter="showBanner()" onmouseleave="hideBanner()">11/11/1111</td>
-                        <td><button class="action-button" onclick="editContact()" id="edit-button"><img src="images/edit-icon.png"/></button>
+                        <td class="contact-detail">Burt Reynolds</td>
+                        <td class="contact-detail">(111) 111-111</td>
+                        <td class="contact-detail"><a type="email">burt@bandit.com</a></td>
+                        <td class="contact-detail">11/11/1111</td>
+                        <td><button class="action-button" onclick="editContact(this.parentNode.parentNode)" id="edit-button"><img src="images/edit-icon.png"/></button>
                         <button class="action-button" onclick="deleteContact(this)" id="delete-button"><img src="images/delete-icon.png"/></button></td>
                     </tr>
                     <tr class="contact">
-                        <td onclick="copyContent(this)" onmouseenter="showBanner()" onmouseleave="hideBanner()">Burt Reynolds</td>
-                        <td onclick="copyContent(this)" onmouseenter="showBanner()" onmouseleave="hideBanner()">(111) 111-111</td>
-                        <td onclick="copyContent(this)" onmouseenter="showBanner()" onmouseleave="hideBanner()"><a type="email">burt@bandit.com</a></td>
-                        <td onclick="copyContent(this)" onmouseenter="showBanner()" onmouseleave="hideBanner()">11/11/1111</td>
-                        <td><button class="action-button" onclick="editContact()" id="edit-button"><img src="images/edit-icon.png"/></button>
+                        <td class="contact-detail">Burt Reynolds</td>
+                        <td class="contact-detail">(111) 111-111</td>
+                        <td class="contact-detail"><a type="email">burt@bandit.com</a></td>
+                        <td class="contact-detail">11/11/1111</td>
+                        <td><button class="action-button" onclick="editContact(this.parentNode.parentNode)" id="edit-button"><img src="images/edit-icon.png"/></button>
                         <button class="action-button" onclick="deleteContact(this)" id="delete-button"><img src="images/delete-icon.png"/></button></td>
                     </tr>
                     <!-- Add more contact entries following the same structure -->
@@ -65,15 +65,19 @@
     <div class="bottom-banner" id="feedbackBanner">Click to Copy</div>
 
     <script>
-        // JavaScript to handle collapsing/expanding contacts
-        const contactNames = document.querySelectorAll('.contact-name');
+        const contactDetails = document.querySelectorAll('.contact-detail');
 
-        contactNames.forEach(contactName => {
-            contactName.addEventListener('click', () => {
-                const contact = contactName.closest('.contact');
-                contact.classList.toggle('show');
-                contactName.classList.toggle('show');
+        contactDetails.forEach(contactDetail => {
+            console.log(contactDetail)
+            contactDetail.addEventListener('click', () => {
+                copyContent(contactDetail)
             });
+            contactDetail.addEventListener('mouseenter', () => {
+                showBanner()
+            })
+            contactDetail.addEventListener('mouseleave', () => {
+                hideBanner()
+            })
         });
 
         function copyContent(element) {
@@ -118,6 +122,14 @@
             {
                 table.deleteRow(row.rowIndex);
             }
+        }
+
+        function editContact(g_parent) {
+            g_parent.querySelectorAll(".contact-detail").forEach(contactDetail => {
+                console.log(contactDetail);
+                contactDetail.classList.remove("contact-detail");
+                contactDetail.classList.add("editable-detail");
+            });
         }
     </script>
 </body>
