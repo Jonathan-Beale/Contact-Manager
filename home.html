@@ -7,6 +7,8 @@
     <link rel="icon" type="image/png" href="images/favicon.png">
     <link rel="stylesheet" href="css/style-home.css">
     <link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet">
+    <link rel="stylesheet" href="css/style-home.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
     <div class="diagonal">
@@ -17,6 +19,12 @@
 
     <!-- Line break for spacing -->
     <h1><br></h1>
+
+    <!-- Search -->
+    <div id="searchContainer" class="search-wrapper">
+        <input type = "text" id= "searchInput" oninput = "searchContacts()" placeholder = "Search contacts...">
+        <i class="fas fa-search"> </i>
+    </div>
 
     <div id="contactsContainer" class="contacts-wrapper">
         <div class="contacts-grid">
@@ -131,6 +139,30 @@
                 contactDetail.classList.add("editable-detail");
             });
         }
+
+
+        function searchContacts() 
+        {
+            var rows = document.querySelectorAll('.contact');
+            var search = document.getElementById("searchInput").value.toLowerCase();
+
+            rows.forEach(row => {
+            var fullName = row.querySelector('td:first-child').textContent.toLowerCase();
+            var lastName = fullName.split(' ')[1]; 
+
+            if (lastName.startsWith(search) || fullName.startsWith(search)) 
+            {
+                row.style.display = ""; 
+            } 
+            else 
+            {
+                row.style.display = "none"; 
+            }
+        });
+        
+        }
+
+
     </script>
 </body>
 </html>
