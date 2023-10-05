@@ -202,3 +202,29 @@ td{
         padding: 10px 10px;
     }
 }
+
+
+#searchInput {
+    width: calc(100% - 40px); 
+    padding: 14px;
+    font-size: 24px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+}
+
+
+#searchContainer {
+    position: relative; 
+    width: 30%; 
+}
+
+.search-wrapper x {
+    right: 10px;
+    top: 30%;
+    transform: translateY(-50%);
+    position: absolute;
+    color: white;
+    font-size: 27px;
+    cursor: pointer;
+}
