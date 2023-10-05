@@ -25,7 +25,7 @@ password: `admin`
 - [x] Display the current contacts of the user (**Jon**)
 
 #### Allow the user to search through the contacts
-- [ ] Add a search bar above the contacts array w/ (optional) magnifying glass icon 
+- [X] Add a search bar above the contacts array w/ (optional) magnifying glass icon (**krm**)
 - [ ] Call the search function and update the display on `enter`
 
 #### Allow the user to create new contacts
