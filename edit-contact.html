@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Contact</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="css/style-edit.css" rel="stylesheet" />
+</head>
+<body>
+   
+    <div class="wrapper contacts-wrapper">
+        <div id="Title" class="title">
+            <h1>Edit Contact</h1>
+        </div>
+        <form>
+            <label for="name" class="lbl-style">Name:</label>
+            <input type="text" id="name" class="mt-1" value="" >
+            <label for="phone" class="lbl-style">Phone:</label>
+            <input type="text" id="phone" class="mt-1" value="">
+            <label for="email" class="lbl-style">Email:</label>
+            <input type="email" id="email" class="mt-1" value="">
+            <label for="date" class="lbl-style">Date:</label>
+            <input type="text" id="date" class="mt-1" value="">
+            <button class="submit-button" type="button" onclick="updateContact()">Save</button>
+            <button class="submit-button mt-1" type="button" onclick="cancelEdit()">Cancel</button>
+        </form>
+    </div>
+    <script>
+        // Retrieve query parameters from the URL
+        const params = new URLSearchParams(window.location.search);
+
+        // Get the values from the query parameters
+        const name = params.get('name');
+        const phone = params.get('phone');
+        const email = params.get('email');
+        const date = params.get('date');
+
+        // Populate the form fields with the retrieved values
+        document.getElementById('name').value = name;
+        document.getElementById('phone').value = phone;
+        document.getElementById('email').value = email;
+        document.getElementById('date').value = date;
+
+
+        function cancelEdit() {
+            // Close the current window (the edit page)
+            window.close();
+        }
+
+
+
+    </script>
+    <script src="js/script.js"></script>
+</body>
+</html>
