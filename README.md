@@ -17,9 +17,9 @@ password: `admin`
 - [x] Sign-up button (**syd**)
 - [x] Fields for email and password+confirmation (**syd**)
 - [x] Ensure valid email (**syd**)
-- [ ] Check for existing account
+- [X] Check for existing account (krm)
 - [ ] Send confirmation email?
-- [ ] Create new account
+- [X] Create new account (krm)
 
 ## Home Page
 - [x] Display the current contacts of the user (**Jon**)
@@ -29,7 +29,7 @@ password: `admin`
 - [ ] Call the search function and update the display on `enter`
 
 #### Allow the user to create new contacts
-- [ ] Add editable fields for the user to put the new contact info in
+- [X] Add editable fields for the user to put the new contact info in
 - [x] Add a `+` button for adding the contacts (**syd**)
 
 #### Allow the user to delete contacts
@@ -38,7 +38,7 @@ password: `admin`
 - [x] Delete the contact on confirmation (**syd**)
 #### Allow the user to edit contacts
 - [x] Add a pencil button next to each contact (**syd**)
-- [ ] Add editable fields beneath the contact information (or make information editable)
+- [X] Add editable fields beneath the contact information (or make information editable) (krm)
 - [ ] Make cancel and confirm buttons (optional)
 ### Extra Features:
 - [x] Highlights the contact being hovered over (**jon**)
