@@ -112,26 +112,16 @@
             });
         });
 
-
+        editing = false;
         function editContact(contactRow) {
             // Get all the <td> elements within the <tr>
             var tdElements = contactRow.querySelectorAll(".contact-detail");
+            editing = true;
 
             // Loop through each <td> element
             for (var i = 0; i < tdElements.length; i++) {
                 var td = tdElements[i];
-
-                // Create an input element
-                var input = document.createElement("input");
-                input.type = "text";
-                input.value = td.textContent.trim();
-
-                // Add a class to the input element
-                input.classList.add("editable-input");
-
-                // Replace the <td> content with the input element
-                td.innerHTML = "";
-                td.appendChild(input);
+                td.contentEditable = true;
             }
             // Hide "Edit" button, show "Save" and "Cancel" buttons
             contactRow.querySelector(".edit-button").style.display = "none";
@@ -144,13 +134,13 @@
         function cancelEdit(contactRow) {
             // Get all the <td> elements within the <tr>
             var tdElements = contactRow.querySelectorAll(".contact-detail");
+            editing = false;
 
             // Loop through each <td> element
             for (var i = 0; i < tdElements.length; i++) {
                 var td = tdElements[i];
 
-                // Restore the original text content
-                td.innerHTML = td.querySelector("input").value;
+                td.contentEditable = false;
             }
 
             // Show "Edit" button, hide "Save" and "Cancel" buttons
@@ -160,6 +150,9 @@
 
 
         function copyContent(element) {
+            if(editing) {
+                return
+            }
             var range = document.createRange();
             range.selectNode(element);
             window.getSelection().removeAllRanges()

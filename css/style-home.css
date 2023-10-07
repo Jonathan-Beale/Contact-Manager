@@ -257,7 +257,8 @@ td{
 
 /* ADD */
 .editable-input {
-    padding: 10px 5px 10px 5px;
+    padding: 0px;
+    width: 100%;
     font-size: 13px;
     font-weight:700
 }
