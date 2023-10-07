@@ -70,9 +70,29 @@ body{
     align-items: center;
 }
 
-.editable-detail {
-    background: white;
-    cursor: auto;
+.contact-name {
+    font-size: 20px;
+    color: #000000;
+    font-weight: 600;
+    transition: 0.3s;
+    cursor: pointer;
+    background: #00ffc3ce;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+
+.contact-details {
+    display: none;
+    padding-top: 10px;
+}
+
+.contact.show .contact-details {
+    display: block;
+}
+
+.contact-name.show {
+    background: #007f5b;
 }
 
 .contacts-grid {
@@ -81,14 +101,18 @@ body{
     justify-content: center;
 }
 
+
 th{
     font-size: 1.2vw;
     padding: 1vw;
 }
 
+
+/*Edit*/
+
 td{
     font-size: 1.2vw;
-    padding: 1.5vw;
+    padding: 1.2vw;
     border: solid 1px #0000006d;
     background-image: linear-gradient(#ffffffb0, #ffffff43);
 }
@@ -201,30 +225,39 @@ td{
         border-radius: 15px;
         padding: 10px 10px;
     }
-}
 
 
-#searchInput {
-    width: calc(100% - 40px); 
-    padding: 14px;
-    font-size: 24px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    margin-bottom: 10px;
 }
 
 
 #searchContainer {
-    position: relative; 
-    width: 30%; 
+    position: relative; /* Set the search container as a positioning context */
+    width: 30%; /* Ensure the search container takes 100% width */
 }
 
-.search-wrapper x {
-    right: 10px;
-    top: 30%;
-    transform: translateY(-50%);
+#searchInput {
+    width: calc(100% - 40px); /* Adjust the width of the search input to leave space for the icon */
+    font-size: 18px;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.search-wrapper i {
     position: absolute;
-    color: white;
-    font-size: 27px;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #333333;
+    font-size: 24px;
     cursor: pointer;
+}
+
+
+/* ADD */
+.editable-input {
+    padding: 10px 5px 10px 5px;
+    font-size: 13px;
+    font-weight:700
 }
