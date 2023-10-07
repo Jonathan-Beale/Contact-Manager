@@ -253,12 +253,3 @@ td{
     font-size: 24px;
     cursor: pointer;
 }
-
-
-/* ADD */
-.editable-input {
-    padding: 0px;
-    width: 100%;
-    font-size: 13px;
-    font-weight:700
-}
