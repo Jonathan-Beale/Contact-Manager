@@ -2,7 +2,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title> SLP-17 Home</title>
+    <title> Home</title>
     <link rel="icon" type="image/png" href="images/favicon.png">
     <link rel="stylesheet" href="css/style-home.css">
     <link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet">
@@ -13,13 +13,15 @@
 <body>
     <div class="diagonal">
         <div id="Title" class="title">
-            <h1>SLP-17 Home</h1>
+            <h1>Home Page</h1>
         </div>
     </div>
 
     <!-- Line break -->
     <h1><br></h1>
 
+
+    <!-- NEW ADDED CODE IS HERE-->>
     <!-- Search input field -->
     <div id="searchContainer" class="search-wrapper">
         <input type="text" id="searchInput" oninput="searchContacts()" placeholder="Search contacts...">
@@ -43,34 +45,50 @@
                 <tbody>
                     <!-- Add contact entries as table rows -->
                     <tr class="contact">
-                        <td onclick="copyContent(this)" onmouseleave="hideBanner()">Sam Reynolds</td>
-                        <td onclick="copyContent(this)" onmouseenter="showBanner()" onmouseleave="hideBanner()">(111) 111-111</td>
-                        <td onclick="copyContent(this)" onmouseenter="showBanner()" onmouseleave="hideBanner()"><a type="email">sam@bandit.com</a></td>
-                        <td onclick="copyContent(this)" onmouseenter="showBanner()" onmouseleave="hideBanner()">08/07/1990</td>
+                        <td class="contact-detail" onclick="copyContent(this)" onmouseleave="hideBanner()">Sam Reynolds</td>
+                        <td class="contact-detail" onclick="copyContent(this)" onmouseenter="showBanner()" onmouseleave="hideBanner()">(111) 111-111</td>
+                        <td class="contact-detail" onclick="copyContent(this)" onmouseenter="showBanner()" onmouseleave="hideBanner()"><a type="email">sam@bandit.com</a></td>
+                        <td class="contact-detail" onclick="copyContent(this)" onmouseenter="showBanner()" onmouseleave="hideBanner()">08/07/1990</td>
                         <td>
-                            <button class="action-button" onclick="editContact('Sam Reynolds', '(111) 111-111', 'sam@bandit.com', '08/07/1990')"><img src="images/edit-icon.png" /></button>
+                            <button class="action-button edit-button" onclick="editContact(this.parentNode.parentNode)" id="edit-button">
+                                <img src="images/edit-icon.png" />
+                            </button>
                             <button class="action-button" onclick="deleteContact(this)" id="delete-button"><img src="images/delete-icon.png" /></button>
+                            <button class="action-button cancel-button" style="display: none;" onclick="cancelEdit(this.parentNode.parentNode)">
+                                Cancel
+                            </button>
                         </td>
                     </tr>
                     <tr class="contact">
-                        <td onclick="copyContent(this)" onmouseenter="showBanner()" onmouseleave="hideBanner()">Burt Reynolds</td>
-                        <td onclick="copyContent(this)" onmouseenter="showBanner()" onmouseleave="hideBanner()">(111) 111-111</td>
-                        <td onclick="copyContent(this)" onmouseenter="showBanner()" onmouseleave="hideBanner()"><a type="email">burt@bandit.com</a></td>
-                        <td onclick="copyContent(this)" onmouseenter="showBanner()" onmouseleave="hideBanner()">11/11/1111</td>
+                        <td class="contact-detail" onclick="copyContent(this)" onmouseenter="showBanner()" onmouseleave="hideBanner()">Burt Reynolds</td>
+                        <td class="contact-detail" onclick="copyContent(this)" onmouseenter="showBanner()" onmouseleave="hideBanner()">(111) 111-111</td>
+                        <td class="contact-detail" onclick="copyContent(this)" onmouseenter="showBanner()" onmouseleave="hideBanner()"><a type="email">burt@bandit.com</a></td>
+                        <td class="contact-detail" onclick="copyContent(this)" onmouseenter="showBanner()" onmouseleave="hideBanner()">11/11/1111</td>
                         <td>
-                            <button class="action-button" onclick="editContact('Burt Reynolds', '(111) 111-111', 'burt@bandit.com', '11/11/1111')"><img src="images/edit-icon.png" /></button>
+                            <button class="action-button edit-button" onclick="editContact(this.parentNode.parentNode)" id="edit-button">
+                                <img src="images/edit-icon.png" />
+                            </button>
                             <button class="action-button" onclick="deleteContact(this)" id="delete-button"><img src="images/delete-icon.png" /></button>
+                            
+                            <button class="action-button cancel-button" style="display: none;" onclick="cancelEdit(this.parentNode.parentNode)">
+                                Cancel
+                            </button>
                         </td>
                     </tr>
                     <tr class="contact">
-                        <td onclick="copyContent(this)" onmouseenter="showBanner()" onmouseleave="hideBanner()">David Reynolds</td>
-                        <td onclick="copyContent(this)" onmouseenter="showBanner()" onmouseleave="hideBanner()">(222) 222-222</td>
-                        <td onclick="copyContent(this)" onmouseenter="showBanner()" onmouseleave="hideBanner()"><a type="email">david@bandit.com</a></td>
-                        <td onclick="copyContent(this)" onmouseenter="showBanner()" onmouseleave="hideBanner()">05/01/2000</td>
+                        <td class="contact-detail" onclick="copyContent(this)"  onmouseenter="showBanner()" onmouseleave="hideBanner()">David Reynolds</td>
+                        <td class="contact-detail" onclick="copyContent(this)" onmouseenter="showBanner()" onmouseleave="hideBanner()">(222) 222-222</td>
+                        <td class="contact-detail" onclick="copyContent(this)" onmouseenter="showBanner()" onmouseleave="hideBanner()"><a type="email">david@bandit.com</a></td>
+                        <td class="contact-detail" onclick="copyContent(this)" onmouseenter="showBanner()" onmouseleave="hideBanner()">05/01/2000</td>
                         <td>
-                            <button class="action-button" onclick="editContact('David Reynolds', '(222) 222-222', 'david@bandit.com', '05/01/2000')"><img src="images/edit-icon.png" /></button>
+                            <button class="action-button edit-button" onclick="editContact(this.parentNode.parentNode)" id="edit-button">
+                                <img src="images/edit-icon.png" />
+                            </button>
 
                             <button class="action-button" onclick="deleteContact(this)" id="delete-button"><img src="images/delete-icon.png" /></button>
+                            <button class="action-button cancel-button" style="display: none;" onclick="cancelEdit(this.parentNode.parentNode)">
+                                Cancel
+                            </button>
                         </td>
                     </tr>
 
@@ -93,6 +111,53 @@
                 contactName.classList.toggle('show');
             });
         });
+
+
+        function editContact(contactRow) {
+            // Get all the <td> elements within the <tr>
+            var tdElements = contactRow.querySelectorAll(".contact-detail");
+
+            // Loop through each <td> element
+            for (var i = 0; i < tdElements.length; i++) {
+                var td = tdElements[i];
+
+                // Create an input element
+                var input = document.createElement("input");
+                input.type = "text";
+                input.value = td.textContent.trim();
+
+                // Add a class to the input element
+                input.classList.add("editable-input");
+
+                // Replace the <td> content with the input element
+                td.innerHTML = "";
+                td.appendChild(input);
+            }
+            // Hide "Edit" button, show "Save" and "Cancel" buttons
+            contactRow.querySelector(".edit-button").style.display = "none";
+            contactRow.querySelector(".cancel-button").style.display = "inline";
+
+        }
+
+        
+
+        function cancelEdit(contactRow) {
+            // Get all the <td> elements within the <tr>
+            var tdElements = contactRow.querySelectorAll(".contact-detail");
+
+            // Loop through each <td> element
+            for (var i = 0; i < tdElements.length; i++) {
+                var td = tdElements[i];
+
+                // Restore the original text content
+                td.innerHTML = td.querySelector("input").value;
+            }
+
+            // Show "Edit" button, hide "Save" and "Cancel" buttons
+            contactRow.querySelector(".edit-button").style.display = "inline";
+            contactRow.querySelector(".cancel-button").style.display = "none";
+        }
+
 
         function copyContent(element) {
             var range = document.createRange();
@@ -139,8 +204,7 @@
         }
 
 
-        function searchContacts() 
-        {
+        function searchContacts() {
             var searchValue = document.getElementById("searchInput").value.toLowerCase();
             var contactRows = document.querySelectorAll('.contact');
 
@@ -151,16 +215,79 @@
                 if (contactFullName.startsWith(searchValue) || contactLastName.startsWith(searchValue)) {
                     contactRow.style.display = ""; // Show the row if the contact name or last name starts with the search value
                 } else {
-                    contactRow.style.display = "none"; // Hide the row 
+                    contactRow.style.display = "none"; // Hide the row if the contact name or last name does not start with the search value
                 }
             });
         }
 
+        function addContact() {
+           
+                // Create a new <tr> element for the new item
+                var newRow = document.createElement("tr");
+                newRow.className = "contact"; // Add the "contact" class to the new row
+
+                // Create <td> elements for each column in the new row
+                var nameTd = document.createElement("td");
+                nameTd.className = "contact-detail";
+                var nameInput = document.createElement("input");
+                nameInput.type = "text";
+                nameInput.classList.add("editable-input");
+                nameTd.appendChild(nameInput);
+
+           
+                var phoneTd = document.createElement("td");
+                phoneTd.className = "contact-detail ";
+                var phoneInput = document.createElement("input");
+                phoneInput.type = "text";
+                phoneInput.classList.add("editable-input");
+                phoneTd.appendChild(phoneInput);
+
+                var emailTd = document.createElement("td");
+                emailTd.className = "contact-detail";
+                var emailInput = document.createElement("input");
+                emailInput.type = "text";
+                emailInput.classList.add("editable-input");
+                emailTd.appendChild(emailInput);
+
+                var dateTd = document.createElement("td");
+                dateTd.className = "contact-detail ";
+                var dateInput = document.createElement("input");
+                dateInput.type = "text";
+                dateInput.classList.add("editable-input");
+                dateTd.appendChild(dateInput);
+
+                var actionsTd = document.createElement("td");
+                actionsTd.innerHTML = `
+                   
+                    <button class="action-button save-button" >
+                        Save
+                    </button>
+                    
+                    <button class="action-button delete-button" onclick="deleteContact(this)">
+                        Delete
+                    </button>
+                     <button class="action-button cancel-button" style="display: none;" onclick="cancelEdit(this.parentNode.parentNode)">
+                         Cancel
+                     </button>
+                `;
+
+                // Append the <td> elements to the new row
+                newRow.appendChild(nameTd);
+                newRow.appendChild(phoneTd);
+                newRow.appendChild(emailTd);
+                newRow.appendChild(dateTd);
+                newRow.appendChild(actionsTd);
+
+                // Append the new row to the table
+                var table = document.querySelector("table");
+                table.appendChild(newRow);
+            
+        }
+        /* add New Item*/
 
     </script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js"></script>
-    <script src="js/script.js"></script>
 
 </body>
 </html>
