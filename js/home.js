@@ -22,7 +22,6 @@ function editContact(contactRow) {
     }
     // Hide "Edit" button, show "Save" and "Cancel" buttons
     contactRow.querySelector(".edit-button").style.display = "none";
-    contactRow.querySelector(".cancel-button").style.display = "inline";
     contactRow.querySelector(".save-button").style.display = "inline";
 
 }
@@ -43,7 +42,6 @@ function cancelEdit(contactRow) {
 
     // Show "Edit" button, hide "Save" and "Cancel" buttons
     contactRow.querySelector(".edit-button").style.display = "inline";
-    contactRow.querySelector(".cancel-button").style.display = "none";
     contactRow.querySelector(".save-button").style.display = "none";
 }
 
@@ -139,9 +137,8 @@ function addContact() {
         var actionsTd = document.createElement("td");
         actionsTd.innerHTML = `
             
-        <button class="action-button edit-button" style="display: none" onclick="editContact(this.parentNode.parentNode)" id="edit-button"><img src="images/edit-icon.png" /></button>
-        <button class="action-button cancel-button" style="display: inline;" onclick="cancelEdit(this.parentNode.parentNode)">C</button>
-        <button class="action-button save-button" style="display: inline;" onclick="cancelEdit(this.parentNode.parentNode)">S</button>
+        <button class="action-button edit-button" style="display: none;" onclick="editContact(this.parentNode.parentNode)" id="edit-button"><img src="images/edit-icon.png" /></button>
+        <button class="action-button save-button" style="display: inline;" onclick="cancelEdit(this.parentNode.parentNode)"><img src="images/confirm-icon.png" /></button>
         <button class="action-button delete-button" onclick="deleteContact(this)"><img src="images/delete-icon.png" /></button>
     
         `;
