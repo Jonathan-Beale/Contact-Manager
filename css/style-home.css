@@ -18,7 +18,7 @@ body{
 }
 
 .diagonal{
-    width: 360px;
+    width: 30%;
     padding: 15px 30px;
     background: #000000;
     transform: skewY(7deg);
@@ -26,7 +26,7 @@ body{
 }
 
 .title{
-    font-size: 15px;
+    font-size: 1.2vw;
     padding: 30px 45px;
     background: #ffffff;
     font-weight: 600;
@@ -37,7 +37,7 @@ body{
 }
 
 .contacts-wrapper {
-    width: 68%;
+    width: max(68%, 800px);
     background: #ffffff89;
     backdrop-filter: blur(50px);
     border: solid 5px #000000;
@@ -70,21 +70,10 @@ body{
     align-items: center;
 }
 
-.contact-name {
-    font-size: 20px;
-    color: #000000;
-    font-weight: 600;
-    transition: 0.3s;
-    cursor: pointer;
-    background: #00ffc3ce;
-    border: none;
-    border-radius: 5px;
-    padding: 5px 10px;
-}
-
 .contact-details {
     display: none;
     padding-top: 10px;
+    font-size: 16px;
 }
 
 .contact.show .contact-details {
@@ -103,15 +92,13 @@ body{
 
 
 th{
-    font-size: 1.2vw;
+    font-size: max(1.2vw, 14px);
     padding: 1vw;
 }
 
 
-/*Edit*/
-
 td{
-    font-size: 1.2vw;
+    font-size: max(1.2vw, 12px);
     padding: 1.2vw;
     border: solid 1px #0000006d;
     background-image: linear-gradient(#ffffffb0, #ffffff43);
@@ -122,7 +109,7 @@ td{
     bottom: 0;
     left: 0;
     width: 100%;
-    background-color: #333; /* Change to your desired banner background color */
+    background-color: #333;
     color: white;
     text-align: center;
     height: 40px;
@@ -178,16 +165,17 @@ td{
 @media screen and (max-width: 900px){
     body{
         gap: 1px;
+        min-width: 600px;
     }
 
     .diagonal{
-        width: 200px;
+        width: 30%;
         padding: 10px 20px;
         border-radius: 10px;
     }
     
     .title{
-        font-size: 8px;
+        font-size: 1.5vw;
         padding: 10px 20px;
         border:solid 3px #000000;
         border-radius: 30px;
@@ -195,6 +183,7 @@ td{
 
     .contacts-wrapper{
         min-width: 80%;
+        width: max(80%, 600px);
         border: solid 2px #000000;
         border-radius: 25px;
         padding: 20px 20px;
@@ -207,13 +196,13 @@ td{
     }
 
     .diagonal{
-        width: 120px;
+        width: 30%;
         padding: 5px 10px;
         border-radius: 7px;
     }
     
     .title{
-        font-size: 5px;
+        font-size: 1.5vw;
         padding: 5px 10px;
         border:solid 1.5px #000000;
         border-radius: 15px;
@@ -221,6 +210,7 @@ td{
 
     .contacts-wrapper{
         min-width: 80%;
+        width: max(80%, 550px);
         border: solid 2px #000000;
         border-radius: 15px;
         padding: 10px 10px;
@@ -230,12 +220,12 @@ td{
 }
 
 #searchContainer {
-    position: relative; /* Set the search container as a positioning context */
-    width: 30%; /* Ensure the search container takes 100% width */
+    position: relative;
+    width: 30%;
 }
 
 #searchInput {
-    width: calc(100% - 40px); /* Adjust the width of the search input to leave space for the icon */
+    width: calc(100% - 40px);
     font-size: 1.25vw;
     padding: 1vw;
     margin-bottom: 10px;
