@@ -229,7 +229,6 @@ td{
 
 }
 
-
 #searchContainer {
     position: relative; /* Set the search container as a positioning context */
     width: 30%; /* Ensure the search container takes 100% width */
@@ -237,19 +236,18 @@ td{
 
 #searchInput {
     width: calc(100% - 40px); /* Adjust the width of the search input to leave space for the icon */
-    font-size: 18px;
-    padding: 15px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    font-size: 1.25vw;
+    padding: 1vw;
     margin-bottom: 10px;
+    border: solid 2px #000000;
+    border-radius: 20px;
 }
 
-.search-wrapper i {
+.icon {
+    height: 2.5vw;
+    width: 2.5vw;
     position: absolute;
-    right: 10px;
-    top: 50%;
+    top: 45%;
     transform: translateY(-50%);
-    color: #333333;
-    font-size: 24px;
     cursor: pointer;
 }
