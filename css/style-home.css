@@ -221,12 +221,13 @@ td{
 
 #searchContainer {
     position: relative;
-    width: 30%;
+    width: max(30%, 300px);
+    min-height: fit-content;
 }
 
 #searchInput {
     width: calc(100% - 40px);
-    font-size: 1.25vw;
+    font-size: 16px;
     padding: 1vw;
     margin-bottom: 10px;
     border: solid 2px #000000;
@@ -234,8 +235,8 @@ td{
 }
 
 .icon {
-    height: 2.5vw;
-    width: 2.5vw;
+    height: max(30px, 2.5vw);
+    width: max(30px, 2.5vw);
     position: absolute;
     top: 45%;
     transform: translateY(-50%);
