@@ -35,30 +35,24 @@
                 <div class="message"><br></div>
                 <div id="Login Message" class="message"></div>
             </div>
-        </div>
         <div id="Sign Up" class="tab-signup">
-            <form id="registrationForm">
-                <div class="wrapper">
-                    <h1>Create an account.</h1>
-                    <div class="input">
-                        <input id="signupEmail" type="email" placeholder="Email" name="email" required>
-                    </div>
-                    <div class="input">
-                        <input id="signupPassword" type="password" placeholder="Password" name="pw1" required>
-                    </div>
-                    <div class="input">
-                        <input id="signupPasswordConfirm" type="password" placeholder="Confirm Password" name="pw2" required>
-                    </div>
-                    <button type="submit" class="submit-button">Sign Up</button>
-                    <div class="mt">
-                        <p class="error" id="message"></p>
-                    </div>
-                    
-                    <div class="message"><br></div>
-                    <div id="Email Message" class="message"></div>
-                    <div id="Password Message" class="message"></div>
+            <div class="wrapper">
+                <h1>Create an account.</h1>
+                <div class="input">
+                    <input id="signupEmail" type="email" placeholder="Email" name="email" required>
                 </div>
-            </form>
+                <div class="input">
+                    <input id="signupPassword" type="password" placeholder="Password" name="pw1" required>
+                </div>
+                <div class="input">
+                    <input id="signupPasswordConfirm" type="password" placeholder="Confirm Password" name="pw2" required>
+                </div>
+                <button type="submit" class="submit-button" onclick="validateSignup()">Sign Up</button>
+                <div class="message"><br></div>
+                <div id="Email Message" class="message"></div>
+                <div id="Password Message" class="message"></div>
+            </div>
+        </div>
         </div>
         <script>
             function displayLogin() {
@@ -125,43 +119,6 @@
                     window.location.href = "home.html";
                 }
             }
-
-
-            document.addEventListener("DOMContentLoaded", function () {
-                const registrationForm = document.getElementById("registrationForm");
-                const messageElement = document.getElementById("message");
-
-                registrationForm.addEventListener("submit", function (e) {
-                    e.preventDefault(); // Prevent the form from submitting
-
-                    // Get the values entered by the user
-                    const email = registrationForm.email.value;
-                    /*const password = registrationForm.password.value;*/
-
-                    // Load and parse the JSON data from users.json (you can use Fetch API here)
-                    const users = [
-                        { "email": "user1@example.com" },
-                        { "email": "user2@example.com" },
-                        { "email": "user@admin.com" },
-                        { "email": "david@bandit.com" },
-                        { "email": "burt@bandit.com" },
-                        { "email": "sam@bandit.com" }
-                    ];
-
-                    // Check if the entered email already exists
-                    const userExists = users.some(user => user.email === email);
-
-                    if (userExists) {
-                        messageElement.textContent = "This email is already registered.";
-                    } else {
-                        // Add the new user to the list (you can also save it to your JSON file here)
-                        users.push({ email, password });
-                        messageElement.textContent = "User registered successfully!";
-                        registrationForm.reset(); // Clear the form
-                    }
-                });
-            });
-           
         </script>
     </body>
 </html>
