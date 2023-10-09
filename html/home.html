@@ -1,0 +1,90 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title> SLP-17 </title>
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <link rel="stylesheet" href="css/style-home.css">
+    <link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+
+</head>
+<body>
+    <div class="diagonal">
+        <div id="Title" class="title">
+            <h1>SLP-17 Home Page</h1>
+        </div>
+    </div>
+
+    <!-- Line break -->
+    <h1><br></h1>
+
+    <!-- NEW ADDED CODE IS HERE-->
+    <!-- Search input field -->
+    <div id="searchContainer" class="search-wrapper">
+        <input type="text" id="searchInput" oninput="searchContacts()" placeholder="Search contacts...">
+        <img class="icon" src="images/magnifying-glass.png"/>
+    </div>
+
+    <div id="contactsContainer" class="contacts-wrapper">
+        <div class="contacts-grid">
+            <!-- Use a table for tabular data -->
+            <table>
+                <thead>
+                    <tr>
+                        <th>Contact<br>Name</th>
+                        <th>Contact<br>Phone</th>
+                        <th>Contact<br>Email Address</th>
+                        <th>Date Created</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Add contact entries as table rows -->
+                    <tr class="contact">
+                        <td class="contact-detail" onclick="copyContent(this)" onmouseenter="showBanner(this)" onmouseleave="hideBanner()">Sam Reynolds</td>
+                        <td class="contact-detail" onclick="copyContent(this)" onmouseenter="showBanner(this)" onmouseleave="hideBanner()">(111) 111-111</td>
+                        <td class="contact-detail" onclick="copyContent(this)" onmouseenter="showBanner(this)" onmouseleave="hideBanner()"><a type="email">sam@bandit.com</a></td>
+                        <td class="contact-detail" onclick="copyContent(this)" onmouseenter="showBanner(this)" onmouseleave="hideBanner()">08/07/1990</td>
+                        <td>
+                            <button class="action-button edit-button" onclick="editContact(this.parentNode.parentNode)" id="edit-button"><img src="images/edit-icon.png" /></button>
+                            <button class="action-button save-button" style="display: none;" onclick="confirmEdit(this.parentNode.parentNode)"><img src="images/confirm-icon.png" /></button>
+                            <button class="action-button delete-button" onclick="deleteContact(this)"><img src="images/delete-icon.png" /></button>
+                        </td>
+                    </tr>
+                    <tr class="contact">
+                        <td class="contact-detail" onclick="copyContent(this)" onmouseenter="showBanner(this)" onmouseleave="hideBanner()">Burt Reynolds</td>
+                        <td class="contact-detail" onclick="copyContent(this)" onmouseenter="showBanner(this)" onmouseleave="hideBanner()">(111) 111-111</td>
+                        <td class="contact-detail" onclick="copyContent(this)" onmouseenter="showBanner(this)" onmouseleave="hideBanner()"><a type="email">burt@bandit.com</a></td>
+                        <td class="contact-detail" onclick="copyContent(this)" onmouseenter="showBanner(this)" onmouseleave="hideBanner()">11/11/1111</td>
+                        <td>
+                            <button class="action-button edit-button" onclick="editContact(this.parentNode.parentNode)" id="edit-button"><img src="images/edit-icon.png" /></button>
+                            <button class="action-button save-button" style="display: none;" onclick="confirmEdit(this.parentNode.parentNode)"><img src="images/confirm-icon.png" /></button>
+                            <button class="action-button delete-button" onclick="deleteContact(this)"><img src="images/delete-icon.png" /></button>
+                        </td>
+                    </tr>
+                    <tr class="contact">
+                        <td class="contact-detail" onclick="copyContent(this)"  onmouseenter="showBanner(this)" onmouseleave="hideBanner()">David Reynolds</td>
+                        <td class="contact-detail" onclick="copyContent(this)" onmouseenter="showBanner(this)" onmouseleave="hideBanner()">(222) 222-222</td>
+                        <td class="contact-detail" onclick="copyContent(this)" onmouseenter="showBanner(this)" onmouseleave="hideBanner()"><a type="email">david@bandit.com</a></td>
+                        <td class="contact-detail" onclick="copyContent(this)" onmouseenter="showBanner(this)" onmouseleave="hideBanner()">05/01/2000</td>
+                        <td>
+                            <button class="action-button edit-button" onclick="editContact(this.parentNode.parentNode)" id="edit-button"><img src="images/edit-icon.png" /></button>
+                            <button class="action-button save-button" style="display: none;" onclick="confirmEdit(this.parentNode.parentNode)"><img src="images/confirm-icon.png" /></button>
+                            <button class="action-button delete-button" onclick="deleteContact(this)"><img src="images/delete-icon.png" /></button>
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+            <button class="action-button" onclick="addContactHTML()" id="add-button"><img src="images/add-icon.png" /></button>
+        </div>
+    </div>
+    </div>
+    <div class="bottom-banner" id="feedbackBanner">Click to Copy</div>
+
+    <script src="js/home.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js"></script>
+
+</body>
+</html>

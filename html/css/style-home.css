@@ -1,0 +1,252 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Comfortaa", sans-serif;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    background-image: url(../images/bg2.png);
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+}
+
+.diagonal{
+    width: 30%;
+    padding: 15px 30px;
+    background: #000000;
+    transform: skewY(7deg);
+    border-radius: 20px;
+}
+
+.title{
+    font-size: 1.2vw;
+    padding: 30px 45px;
+    background: #ffffff;
+    font-weight: 600;
+    font-family: 'Roboto', sans-serif;
+    color: #000000;
+    transform: skewY(-7deg);
+    border:solid 5px #000000;
+    border-radius: 70px;
+    text-transform: uppercase;
+    text-align: center;
+    text-shadow: 0vw .2vw 0vw #b1ffee,
+                 0vw 0vw .5vw #ddfff8,
+                 0vw .2vw 1vw #ddfff8,
+                 0vw .3vw 1.5vw #ddfff8,
+                 0vw .4vw 2vw #ddfff8;
+}
+
+.contacts-wrapper {
+    width: max(68%, 800px);
+    background: #ffffff89;
+    backdrop-filter: blur(50px);
+    border: solid 5px #000000;
+    color: #000000;
+    border-radius: 30px;
+    padding: 40px 40px;
+    height: 600px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.contact {
+    border: solid 5px #000000;
+    color: #000000;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+    transition: background-color 0.3s;
+}
+
+.contact:hover {
+    background-color: rgba(168, 255, 236, 0.838);
+    cursor: pointer;
+}
+
+.contact-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.contact-details {
+    display: none;
+    padding-top: 10px;
+    font-size: 16px;
+}
+
+.contact.show .contact-details {
+    display: block;
+}
+
+.contact-name.show {
+    background: #007f5b;
+}
+
+.contacts-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+
+th{
+    font-size: max(1.2vw, 18px);
+    padding: 1vw;
+}
+
+
+td{
+    font-size: max(1.2vw, 14px);
+    padding: 1.2vw;
+    border: solid 1px #0000006d;
+    background-image: linear-gradient(#ffffffb0, #ffffff43);
+}
+
+.bottom-banner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    height: 40px;
+    padding: 10px;
+}
+
+.action-button {
+    border: none;
+    background: none;
+    height: 2vw;
+    width: 2vw;
+    cursor: pointer;
+}
+
+.action-button img {
+    border: none;
+    background: none;
+    height: 2vw;
+    width: 2vw;
+    cursor: pointer;
+}
+
+.action-button:active {
+    box-shadow: 0px -6px 12px 0px rgba(0, 255, 174, 0.47);
+    cursor: pointer;
+}
+
+.add-contact{
+    margin-left: 100px;
+    margin-right: 100px;
+    padding-top: 5%;
+}
+
+::-webkit-scrollbar {
+    width: 1vw;
+    max-width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    border-radius: 20px;
+    background: none;
+}
+
+::-webkit-scrollbar-thumb {
+    background-image: linear-gradient(#00ffdb, #d0fcf2); 
+    border-radius: 20px;
+  }
+
+::-webkit-scrollbar-thumb:hover {
+    background-image: linear-gradient(#009682, #6d827f); 
+}
+
+@media screen and (max-width: 900px){
+    body{
+        gap: 1px;
+        min-width: 600px;
+    }
+
+    .diagonal{
+        width: 30%;
+        padding: 10px 20px;
+        border-radius: 10px;
+    }
+    
+    .title{
+        font-size: 1.5vw;
+        padding: 10px 20px;
+        border:solid 3px #000000;
+        border-radius: 30px;
+    }
+
+    .contacts-wrapper{
+        min-width: 80%;
+        width: max(80%, 600px);
+        border: solid 2px #000000;
+        border-radius: 25px;
+        padding: 20px 20px;
+    }
+}
+
+@media screen and (max-width: 500px){
+    body{
+        gap: .25px;
+    }
+
+    .diagonal{
+        width: 30%;
+        padding: 5px 10px;
+        border-radius: 7px;
+    }
+    
+    .title{
+        font-size: 1.5vw;
+        padding: 5px 10px;
+        border:solid 1.5px #000000;
+        border-radius: 15px;
+    }
+
+    .contacts-wrapper{
+        min-width: 80%;
+        width: max(80%, 550px);
+        border: solid 2px #000000;
+        border-radius: 15px;
+        padding: 10px 10px;
+    }
+
+
+}
+
+#searchContainer {
+    position: relative;
+    width: max(30%, 300px);
+    min-height: fit-content;
+}
+
+#searchInput {
+    width: calc(100% - 40px);
+    font-size: 16px;
+    padding: 1vw;
+    margin-bottom: 10px;
+    border: solid 2px #000000;
+    border-radius: 20px;
+}
+
+.icon {
+    height: max(30px, 2.5vw);
+    width: max(30px, 2.5vw);
+    position: absolute;
+    top: 45%;
+    transform: translateY(-50%);
+}
