@@ -1,18 +1,55 @@
+async function getContactDetails(userId) {
+    const requestOptions = {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ ID: userId })
+    };
 
-/*
-const USERID = localStorage.getItem('userId');
+    const contactIdsResponse = await fetch('/list', requestOptions);
+    const contactIdsData = await contactIdsResponse.json();
+    let contactIds = contactIdsData.ContactList.split(',');
 
-// Set up HTML elements
-var contact_array = getContacts(USERID);
-for(int i = 0; i < contact_array.length(); i++) {
-  contact_htmls = addContactHTML();
-  contact_htmls[0] = contact_array[i].name;
-  contact_htmls[1] = contact_array[i].phone;
-  contact_htmls[2] = contact_array[i].email;
-  contact_htmls[3] = contact_array[i].date;
-  contact_htmls[4].ID = contact_array[i].ID
+    let contacts = [];
+    for (let i = 0; i < contactIds.length; i++) {
+        let contactId = contactIds[i];
+        const contactDetailsRequestOptions = {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ ID: contactId })
+        };
+        const contactDetailsResponse = await fetch('/readContact', contactDetailsRequestOptions);
+        const contactDetailsData = await contactDetailsResponse.json();
+
+        const contactDetail = {
+            Name: contactDetailsData.Name,
+            Email: contactDetailsData.Email,
+            Phone: contactDetailsData.Phone
+        };
+
+        contacts.push(contactDetail);
+    }
+
+    return contacts;  
 }
-*/
+
+async function displayContacts() {
+    const USERID = localStorage.getItem('userId');
+    console.log(USERID);
+    const contacts = await getContactDetails(USERID);
+    console.log(contacts);
+    for(let i = 0; i < contacts.length; i++) {
+      let contactHtml = addContactHTML();
+
+      contactHtml[0].textContent = contacts[i].Name;
+      contactHtml[1].textContent = contacts[i].Phone;
+      contactHtml[2].textContent = contacts[i].Email;
+      contactHtml[3].textContent = contacts[i].Date;
+      contactHtml[4].textContent = contacts[i].ID;
+    }
+}
+
+displayContacts();
+
 
 function editContact(contactRow) {
     // Get all the <td> elements within the <tr>
