@@ -101,13 +101,13 @@ body{
 
 
 th{
-    font-size: max(1.2vw, 14px);
+    font-size: max(1.2vw, 18px);
     padding: 1vw;
 }
 
 
 td{
-    font-size: max(1.2vw, 12px);
+    font-size: max(1.2vw, 14px);
     padding: 1.2vw;
     border: solid 1px #0000006d;
     background-image: linear-gradient(#ffffffb0, #ffffff43);

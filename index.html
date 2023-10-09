@@ -35,90 +35,31 @@
                 <div class="message"><br></div>
                 <div id="Login Message" class="message"></div>
             </div>
+        </div>
         <div id="Sign Up" class="tab-signup">
-            <div class="wrapper">
-                <h1>Create an account.</h1>
-                <div class="input">
-                    <input id="signupEmail" type="email" placeholder="Email" name="email" required>
+            <form id="registrationForm">
+                <div class="wrapper">
+                    <h1>Create an account.</h1>
+                    <div class="input">
+                        <input id="signupEmail" type="email" placeholder="Email" name="email" required>
+                    </div>
+                    <div class="input">
+                        <input id="signupPassword" type="password" placeholder="Password" name="pw1" required>
+                    </div>
+                    <div class="input">
+                        <input id="signupPasswordConfirm" type="password" placeholder="Confirm Password" name="pw2" required>
+                    </div>
+                    <button type="submit" class="submit-button" onclick="validateSignup()">Sign Up</button>
+                    <div class="mt">
+                        <p class="error" id="message"></p>
+                    </div>
+                    
+                    <div class="message"><br></div>
+                    <div id="Email Message" class="message"></div>
+                    <div id="Password Message" class="message"></div>
                 </div>
-                <div class="input">
-                    <input id="signupPassword" type="password" placeholder="Password" name="pw1" required>
-                </div>
-                <div class="input">
-                    <input id="signupPasswordConfirm" type="password" placeholder="Confirm Password" name="pw2" required>
-                </div>
-                <button type="submit" class="submit-button" onclick="validateSignup()">Sign Up</button>
-                <div class="message"><br></div>
-                <div id="Email Message" class="message"></div>
-                <div id="Password Message" class="message"></div>
-            </div>
+            </form>
         </div>
-        </div>
-        <script>
-            function displayLogin() {
-                var i, loginTab, signupTab;
-
-                signupTab = document.getElementsByClassName("tab-signup");
-                for (i = 0; i < signupTab.length; i++) {
-                    signupTab[i].style.display = "none";
-                }
-
-                loginTab = document.getElementsByClassName("tab-login");
-                for (i = 0; i < loginTab.length; i++) {
-                    loginTab[i].style.display = "flex";
-                }
-            }
-
-            function displaySignup() {
-                var i, loginTab, signupTab;
-
-                loginTab = document.getElementsByClassName("tab-login");
-                for (i = 0; i < loginTab.length; i++) {
-                    loginTab[i].style.display = "none";
-                }
-
-                signupTab = document.getElementsByClassName("tab-signup");
-                for (i = 0; i < signupTab.length; i++) {
-                    signupTab[i].style.display = "flex";
-                }
-            }
-
-            function validateLogin() {
-                var email = document.getElementById("loginEmail").value;
-                var password = document.getElementById("loginPassword").value;
-
-                // Replace the current admin access with a search against the database
-                if(email === "user@admin.com" && password === "admin") {
-                    console.log("Login Success!");
-                    window.location.href = "home.html";  // Redirects to home.html
-                } else {
-                    document.getElementById("Login Message").innerHTML = "Incorrect email or password.";
-                    console.log("Wrong credentials: \nemail: user@admin.com,\n password: admin");
-                }
-            }
-
-            function validateSignup() {
-                var email = document.getElementById("signupEmail").value;
-                var pw1 = document.getElementById("signupPassword").value;
-                var pw2 = document.getElementById("signupPasswordConfirm").value;
-
-                // Replace the current admin access with a search against the database
-                if (email == "user@admin.com")
-                {
-                    document.getElementById("Email Message").innerHTML = "An account already exists for this email.";
-                    document.getElementById("Password Message").innerHTML = "";
-                }
-
-                if (pw1 != pw2) {
-                    document.getElementById("Password Message").innerHTML = "Passwords do not match.";
-                    document.getElementById("Email Message").innerHTML = "";
-                }
-
-                else if (email != "user@admin.com" && pw1 == pw2) {
-                    // Still needs to add new account to database
-                    window.location.href = "home.html";
-                }
-            }
-        </script>
+        <script src="js/index.js"></script>
     </body>
 </html>
